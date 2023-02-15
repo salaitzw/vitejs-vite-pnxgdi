@@ -31,12 +31,14 @@ function Game() {
   const [xIsNext, setXIsNext] = useState(true)
   const [history, setHistory] = useState([Array(9).fill(null)])
   const currentSquares = history[history.length - 1];
-function handlePlay
+function handlePlay(nextSquares){
+
+}
 
   return (
     <div className="game">
       <div className="game-board">
-        <Board />
+        <Board xIsNext= {xIsNext} squares = {currentSquares} onPlay = {handlePlay}  />
       </div>
       <div className="game-info">
         <ol>{/*TODO*/}</ol>
@@ -45,13 +47,13 @@ function handlePlay
   );
 }
 
-function Board() {  
+function Board({xIsNext, squares, onPlay}) {  
   
-  const [squares, setSquares] = useState(Array(9).fill(''))
-  const winner = calculateWinner(squares)
+  const [square, setSquares] = useState(Array(9).fill(''))
+  const winner = calculateWinner(square)
   let status = winner ? `Winner is ${winner}`: 'Next Player is' + (xIsNext ? "X":"O")
   function clickHandler(id) {
-    if (squares[id] || calculateWinner(squares)) {
+    if (squares[id] || calculateWinner(square)) {
       return 
     }
     setSquares(prev => {
