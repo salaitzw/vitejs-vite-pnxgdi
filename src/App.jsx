@@ -27,9 +27,26 @@ for (let i = 0; i<winningConditions.length;i++){
 }
 return null
 }
+function Game() {
+  const [xIsNext, setXIsNext] = useState(true)
+  const [history, setHistory] = useState([Array(9).fill(null)])
+  const currentSquares = history[history.length - 1];
+function handlePlay
+
+  return (
+    <div className="game">
+      <div className="game-board">
+        <Board />
+      </div>
+      <div className="game-info">
+        <ol>{/*TODO*/}</ol>
+      </div>
+    </div>
+  );
+}
 
 function Board() {  
-  const [xIsNext, setXIsNext] = useState(true)
+  
   const [squares, setSquares] = useState(Array(9).fill(''))
   const winner = calculateWinner(squares)
   let status = winner ? `Winner is ${winner}`: 'Next Player is' + (xIsNext ? "X":"O")
