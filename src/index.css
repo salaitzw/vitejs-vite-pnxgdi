@@ -56,26 +56,37 @@ body {
   padding: 0;
 }
 
+.board {
+  /* width: 300px; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0;
+  column-gap: 0;
+  width: 102px;
+  height: 102px;
+}
+
 .square {
-  background: #fff;
+  background: transparent;
   border: 1px solid #999;
-  float: left;
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
   height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
+  /* margin-right: -1px;
+  margin-top: -1px; */
+  margin: 0;
   padding: 0;
   text-align: center;
   width: 34px;
 }
 
-.board-row:after {
+/* .board-row:after {
   clear: both;
   content: '';
   display: table;
-}
+} */
 
 .status {
   margin-bottom: 10px;
